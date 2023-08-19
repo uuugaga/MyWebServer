@@ -1,0 +1,188 @@
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 300px; /* 這是一個假設的最大高度，您可能需要調整以適應您的內容 */
+    opacity: 1;
+  }
+}
+
+/* Existing styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  flex-direction: row;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Enhanced styles to match the screenshot */
+
+/* Container for the entire top menu */
+.top-menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+.class-menu-container {
+  position: relative;
+  display: inline-block;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+/* Logo or website title */
+.top-menu-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Search input and category dropdown */
+.top-menu-search-container {
+    display: flex;
+    align-items: center;
+}
+
+.top-menu-category-dropdown {
+    margin-right: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 0px solid #ccc;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+.top-menu-search-input {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 0px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Icon links */
+.top-menu-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.top-menu-icon-link {
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.top-menu-icon-link:hover {
+    color: #666;
+}
+
+
+/* Full width background styles for the very top row */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.top-menu-container {
+    width: 100vw;  /* extend to the full viewport width */
+    padding: 10px 20px;
+}
+
+/* Gray-black background for the icons row and title/logo */
+.top-menu-logo, .top-menu-search-container, .top-menu-icons {
+    background-color: #333;  /* gray-black color */
+    color: white;  /* setting font color to white for better visibility against the dark background */
+}
+
+/* Adjusting the dropdown content color */
+.dropdown-content a {
+    color: #333; /* Setting font color to dark for visibility against the light dropdown */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff; 
+    border: 3px solid #ccc;
+    border-radius: 25px;  
+    padding: 5px 15px;
+}
+
+/* 基本样式 */
+.top-menu-category-dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.menu-label {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sub-menu-item {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.sub-menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+.menu-container {
+  position: relative; /* 這使得 z-index 可以在 .menu 上生效 */
+}
+
+.menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  z-index: 1000; /* 選擇一個相對較高的 z-index 值來確保選單在最上層 */
+}
+
+.menu.open {
+  max-height: 150px;
+}
